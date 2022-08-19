@@ -2,6 +2,8 @@
 
 :root{
     --prime-color: #674bb1;
+    --second-color: #b766d7;
+    --third-color: #d260ff;
     --white: #ffffff;
     --light-gray: #dddddd;
 }
@@ -15,11 +17,11 @@ body{
     color: var(--white);
     background-color: var(--prime-color);
 
-    margin: 0;
-    padding: 0 70px 70px;
+    margin: 0 auto;
+    padding: 0 70px;
     transition: 0.5s;
 
-    max-width: 1200px;
+    max-width: 1300px;
     min-width: 360px;
 }
 
@@ -63,7 +65,9 @@ header img{
 
 .background{
     background-image: url(images/bg-desktop.svg);
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .col-1 h1{
@@ -73,9 +77,47 @@ header img{
 }
 
 
+.register-btn{
+    background-color: var(--white);
+    color: var(--prime-color);
+    border: none;
+    padding: 15px 60px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px 0px #00000081;
+    transition: 0.5s;
+}
+.register-btn:hover{
+    background-color: var(--second-color);
+    color: var(--white);
+    font-weight: bolder;
+}
+
+
+.social_media{
+    display: flex;
+    justify-content: flex-end;
+    margin: 100px 0 0;
+}
+
+.social_media a{
+    text-decoration: none;
+    color: var(--white);
+    margin: 15px;
+    padding: 12px;
+    outline: 1px solid;
+    border-radius: 50%;
+}
+.social_media a:hover{
+    color: var(--third-color);
+}
+.fbook{
+    padding: 0px 3px;
+}
+
 @media screen and (max-width: 1100px) {
     body{
-        padding: 0 30px 70px;
+        padding: 0 30px 0px;
     }
 
     .col-1 h1{
@@ -89,7 +131,7 @@ header img{
 
 @media screen and (max-width: 1000px) {
     body{
-        padding: 0 0 70px;
+        padding: 0;
     }
 
     .container .col-1 h1{
@@ -110,28 +152,70 @@ header img{
 }
 
 @media screen and (max-width: 840px) {
+    header{
+        padding: 20px 10px;
+    }
+    header img{
+        padding: 25px 0px;
+    }
+
+
     .container .col-1 h1{
         padding-right: 0px;
     }
-}
 
-@media screen and (max-width: 750px) {
 
     .container{
         display: grid;
         grid-template-columns: 1fr;
-    }
 
-    .container .col-1 h1{
-        padding-right: 0px;
+        text-align: center;
     }
-    .col-1{
-        grid-row: 1;
-        grid-column: 2;
+    .container .col-1{
+        grid-row: 2;
+        grid-column: 1;
     }
-    .col-2{
+    .container .col-2{
         grid-row: 1;
         grid-column: 1;
     }
 
+    .background{        
+        padding: 0 150px;       
+    }
+
+    .container .col-1{        
+        padding-bottom: 80px;
+    }
+
+
+    .social_media{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+    .background{        
+        padding: 0 80px;
+
+        background-image: url(images/bg-mobile.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+}
+
+@media screen and (max-width: 570px) {
+    
+    .background{        
+        padding: 0 20px;
+    }
+
+    .container .col-1{
+        padding-top: 50px;
+    }
 }
